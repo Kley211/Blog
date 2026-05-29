@@ -6,14 +6,13 @@ import { PostPreview } from 'astro-pure/components/pages'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import { Button, Card, Icon, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
-import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['Html', 'JavaScript', 'CSS', 'Python','Java']
+const frontend = ['TypeScript', 'Vite', 'Astro']
+const backend = ['Vercel', 'Spring Boot', 'FastApi']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -44,7 +43,7 @@ if (!images[imagePath])
         <h1 class='text-3xl font-medium'>{config.author}</h1>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
           {/* TODO: Replace this with your real location, or remove it if you prefer. */}
-          <Label title='Somewhere'>
+          <Label title='China'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
           <Label
@@ -76,11 +75,10 @@ if (!images[imagePath])
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Developer</p>
+        <p class='text-muted-foreground'>AI Agent & Full-stack Developer</p>
         <p class='text-muted-foreground'>
           {/* TODO: Replace this short intro with your own bio. */}
-          This site now uses the clean official Astro Theme Pure template. From here, you can
-          gradually replace the placeholder content with your own posts, notes, projects, and links.
+          北华大学大二在读，目前在学习Agent和全栈知识。
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
       </Section>
@@ -131,9 +129,9 @@ if (!images[imagePath])
       <Section title='Education'>
         <Card
           as='a'
-          heading='Add your school or current role'
-          subheading='Use this card for education, work experience, or another highlight.'
-          date='Start date - End date'
+          heading='北华大学'
+          subheading='计科.'
+          date='9月 2024 - 6月 2028'
           href='https://github.com/Kley211'
         >
           {
@@ -146,45 +144,6 @@ if (!images[imagePath])
         </ul> */
           }
         </Card>
-      </Section>
-
-      <Section title='Website List'>
-        <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
-          <ProjectCard
-            href='https://github.com/Kley211'
-            heading='Project One'
-            subheading='Replace this card with one of your real projects.'
-            imagePath='/src/assets/projects/1.avif'
-          />
-          <ProjectCard
-            href='https://github.com/Kley211'
-            heading='Project Two'
-            subheading='You can point this to GitHub or a live demo.'
-            imagePath='/src/assets/projects/2.avif'
-          />
-          <ProjectCard
-            href='https://github.com/Kley211'
-            heading='Project Three'
-            subheading='Keep the sample image until you have your own artwork.'
-            imagePath='/src/assets/projects/3.avif'
-          />
-          <ProjectCard
-            href='/projects'
-            heading='More projects'
-            subheading='Check out more projects'
-            imagePath='/src/assets/projects/4.avif'
-          />
-        </div>
-      </Section>
-
-      <Section title='Certifications'>
-        <Card
-          as='a'
-          heading='Add a certificate, award, or milestone'
-          subheading='This section is optional. Remove it if you do not need it.'
-          date='Month Year'
-          href='https://github.com/Kley211'
-        />
       </Section>
 
       <Section title='Skills'>
