@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets'
+
+import { Button } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'featured-projects', text: 'Featured Projects' },
+  { depth: 2, slug: 'learning-notes', text: 'Learning Notes' },
+  { depth: 2, slug: 'github', text: 'GitHub' }
+]
+---
+
+<PageLayout title='Projects' {headings} view>
+  <p>
+    {/* TODO: Replace this introduction with your own project overview. */}
+    This page is now a clean starter. Keep the official template layout, then swap these example
+    entries with your real work when you are ready.
+  </p>
+
+  <p>GitHub Activities:</p>
+  <p>
+    <Image
+      src='https://ghchart.rshah.org/659eb9/Kley211'
+      alt='github activities'
+      inferSize
+      loading='lazy'
+    />
+  </p>
+
+  <h2 id='featured-projects'>Featured Projects</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'Project One',
+        description: 'Replace this with your primary project.',
+        links: [{ type: 'github', href: 'https://github.com/Kley211' }]
+      },
+      {
+        name: 'Project Two',
+        description: 'You can link a repo, live site, or project write-up here.',
+        links: [{ type: 'github', href: 'https://github.com/Kley211' }]
+      }
+    ]}
+  />
+
+  <h2 id='learning-notes'>Learning Notes</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'Study Notes',
+        description: 'Use this area for experiments, notes, or smaller side projects.',
+        links: [{ type: 'github', href: 'https://github.com/Kley211' }]
+      }
+    ]}
+  />
+
+  <h2 id='github'>GitHub</h2>
+  <p>
+    {/* TODO: Point this button to a pinned repository if you want a stronger call to action. */}
+    For now, the easiest way to explore more is through your GitHub profile.
+  </p>
+  <Button href='https://github.com/Kley211' title='Open GitHub Profile' target='_blank' />
+</PageLayout>
